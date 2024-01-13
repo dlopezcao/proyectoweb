@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Noticias</title>
+        <meta charset="UTF-8">
+		<meta name="author" content="Daniel López Cao">
+		<meta name="description" content="Pr&aacute;ctica final para la asignatura de «Proyecto 1: Web» del grado de Técnicas de Interacción Digital y Multimedia">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="img/favicon.ico">
+        <link rel="stylesheet" href="css/estilos.css">
+        <script src="js/funciones.js"></script>
+    </head>
+    <body>
+        <!-- Saltar a contenido, invisible salvo para el software que lo necesite al tener tamaño 0 -->
+        <a href="#main-content" tabindex="-1"><img class="skip" src="img/favicon.ico" alt="Skip to content"></a>
+        <!-- Menú de navegación sticky -->
+        <!-- Preferimos Nav fuera de Header, aunque semánticamente podemos dejarlo también dentro -->
+        <nav>
+            <div class="cabecera_menu">
+                <div class="container_menu margen">
+                    <div class="container_hijo">
+                        <a href="index.html"><img class="logo" src="img/logo.svg" alt="Logo ACP"></a>
+                    </div> 
+                    <!-- Desaparecen al redimensionar -->
+                    <ul id="menu-ham-js" class="item-nav navigation">
+                        <li class="nav-menu menu-con-drop submenus">
+                                <a class="boton-menu boton-menu-flecha" href="javascript:void(0);" onclick="submenu()">Club</a>
+                                <div class="contenido-submenu">
+                                    <a href="index.html">Bienvenida</a>
+                                    <a href="#">Historia</a>
+                                    <a href="#">Filosof&iacute;a</a>
+                                    <a href="#">Instalaciones y servicios</a>
+                                    <a href="#">¿D&oacute;nde estamos?</a>
+                                </div>
+                        </li>
+                        <li class="nav-menu menu-con-drop submenus">
+                            <a class="boton-menu boton-menu-flecha" href="javascript:void(0);" onclick="submenu()">Actividades</a>
+                            <div class="contenido-submenu">
+                                <a href="noticias.html">Noticias</a>
+                                <a href="#">Calendario</a>
+                                <a href="#">Horarios</a>
+                                <a href="#">Fotograf&iacute;as</a>
+                            </div>
+                        </li>
+                        <li class="nav-menu menu-con-drop">
+                            <a class="boton-menu boton-menu-flecha" href="javascript:void(0);" onclick="submenu()">Socios</a>
+                            <div class="contenido-submenu">
+                                <a href="alta.html">Hazte socio</a>
+                                <a href="#">Requisitos</a>
+                                <a href="#">Tarifas</a>
+                                <a href="#">Exclusivo para socios</a>
+                            </div>
+                        </li>
+                        <li class="nav-menu menu-con-drop" >
+                            <a class="boton-menu boton-menu-flecha" href="javascript:void(0);" onclick="submenu()">Tienda</a>
+                            <div class="contenido-submenu">
+                                <a href="tienda.html">Cat&aacute;logo</a>
+                                <a href="#">Recogida en tienda</a>
+                                <a href="#">Normas</a>
+                            </div>
+                        </li>
+                        <li class="nav-menu">
+                            <a class="boton-menu" href="#">Contacto</a>
+                        </li>
+                        <li>
+                            <form method="get" action="/busqueda" id="buscar">
+                                <input type="search" aria-label="Teclee aqu&iacute; para buscar en este sitio …" name="search" placeholder="Teclee aqu&iacute; para buscar en este sitio …">
+                                <img src="img/iconos/buscar.svg" alt="Buscar">
+                            </form>
+                        </li>
+                    </ul>
+                    <!-- ***************************** -->
+                    <div class="espaciado">
+                        &nbsp;
+                    </div>
+                    <div class="separador-pc">&nbsp;</div>
+                    <div class="botones-css">                    
+                        <ul class="login">
+                            <li class="login-button-pc enlaces-iconos"><img src="img/iconos/login.svg" alt="Iniciar sesi&oacute;n"><span><a href="#">Iniciar sesi&oacute;n</a></span></li>
+                            <li class="login-button-pc enlaces-iconos"><img src="img/iconos/lang.svg" alt="Idioma"><span><a href="#">Idioma</a></span></li>
+                            <li class="login-button-movil"><a href="#"><img src="img/iconos/buscar.svg" alt="Buscar"></a></li>
+                            <li class="login-button-movil"><a href="#"><img src="img/iconos/lang.svg" alt="Idioma"></a></li>
+                            <li class="login-button-movil"><a href="#"><img src="img/iconos/login.svg" alt="Iniciar sesi&oacute;n"></a></li>
+                        </ul>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="container_hijo menu_hamburguesa alin-derecha">
+                        <a href="javascript:void(0);" onclick="menu()"><img src="img/menu.svg" alt="Men&uacute;"></a>
+                    </div>
+                </div>
+            </div>
+        </nav>  
+        <header>
+            <!-- Inicio DIV envolviendo contenido --> 
+            <div class="container alin-centro margen">
+                <div>
+                    <h1>Noticias</h1>
+                </div>
+            </div>
+        </header>
+        <main id="main-content">
+            <!-- Inicio DIV envolviendo contenido --> 
+            <div class="container margen cuatrocolumnas">
+                    <div class="item-noticia">           
+                        <a href="#">
+                            <h2 class="alin-centro">Cuidando la salud</h2>     
+                            <img class="imagen imagen-noticia" src="img/noticias_05.jpg" alt="Persona con dolor en la rodilla mientras sujeta raqueta de pádel">
+                            <p>
+                                El pr&oacute;ximo mes de enero realizaremos unas jornadas sobre las lesiones deportivas y la ...
+                            </p>
+                        </a>
+                    </div>
+                    <div class="item-noticia">    
+                        <a href="#">       
+                            <h2 class="alin-centro">Torneo andaluz</h2>     
+                            <img class="imagen imagen-noticia" src="img/noticias_04.jpg" alt="Dos personas con vestimenta deportiva blanca en un campo de pádel azul.">
+                            <p>
+                                Se abren las inscripciones del torneo de p&aacute;del de Andaluc&iacute;a que dar&aacute; comienzo pr&oacute;ximamente ...
+                            </p>
+                        </a>
+                    </div>
+                    <div class="item-noticia">      
+                        <a href="#">     
+                            <h2 class="alin-centro">Nueva pista</h2>     
+                            <img class="imagen imagen-noticia" src="img/noticias_03.jpg" alt="Jugadoras de pádel en recinto cubierto">
+                            <p>
+                                Estrenamos nueva pista cubierta en la zona deportiva de la Torre. Desde hoy ya es posible reservar ...
+                            </p>
+                        </a>
+                    </div>
+                    <div class="item-noticia">   
+                        <a href="#">        
+                            <h2 class="alin-centro">Pr&eacute;stamo de material</h2>     
+                            <img class="imagen imagen-noticia" src="img/noticias_02.jpg" alt="Jugadoras de pádel en recinto cubierto">
+                            <p>
+                                Abrimos la teporada de oto&ntilde;o con la incorporaci&oacute;n de m&aacute;s material de pr&eacute;stamo ...
+                            </p>
+                        </a>
+                    </div>
+                    <div class="item-noticia">        
+                        <a href="#">   
+                            <h2 class="alin-centro">Tienda online</h2>     
+                            <img class="imagen imagen-noticia" src="img/noticias_01.jpg" alt="Jugadoras de pádel en recinto cubierto">
+                            <p>
+                                Abrimos la teporada de oto&ntilde;o con la incorporaci&oacute;n de m&aacute;s material de pr&eacute;stamo ...
+                            </p>
+                        </a>
+                    </div>
+
+            </div>
+            <div class="form-botones">
+                <button>M&aacute;s antiguas</button>
+            </div>
+            <div class="espacio-footer"></div>
+        </main>
+        <footer>
+            <div class="content-footer margen">
+                <div>
+                    <a class="enlaces-iconos-social" href="#"><img src="img/social/facebook.svg" alt="facebook"></a>
+                    <!-- Icono instagram-->
+                    <a class="enlaces-iconos-social" href="#"><img src="img/social/instagram.svg" alt="Instagram"></a>
+                    <!-- Icono Youtube-->
+                    <a class="enlaces-iconos-social" href="#"><img src="img/social/youtube.svg" alt="Youtube"></a>
+                    <a class="enlaces-iconos-social" href="#"><img src="img/social/whatsapp.svg" alt="WhatsApp"></a>
+                </div>
+                <div class="footer-texto-inferior">
+                    <div class="negrita">
+                        Asociaci&oacute;n Coru&ntilde;esa de P&aacute;del
+                    </div>
+                    <div>
+                        Avenida de Navarra 51, 15001 - A Coru&ntilde;a
+                    </div>
+                    <div>
+                        Copyright © 2024 - Todos los derechos reservados.
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

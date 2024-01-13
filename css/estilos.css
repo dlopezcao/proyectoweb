@@ -1,0 +1,1179 @@
+/*
+=======================================================================
+Paleta general de colores
+=======================================================================
+Fondo del cuerpo: #FFFFFF
+Color de texto: #000000
+Fondo del encabezado móvil (Azul Celeste): #52B1DC
+Azul noche: #040633
+Amarillo verde: #EBFC51
+Colores alternativos:
+    Azul claro: #D9F5FF
+    Amarillo-verde claro: #F5FFCC
+=======================================================================
+*/
+
+/* 
+#########################################################
+Definición de tipos de letras 
+#########################################################
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Kreon:wght@300;400;700&display=swap');
+
+/* font-family: 'Kreon', serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@87.5,200;87.5,400;87.5,700;100,200;100,400;100,600;100,700&display=swap');
+
+/* font-family: 'Anek Latin', sans-serif; */
+
+/*
+#########################################################
+Definiciones base de HTML
+#########################################################
+*/
+
+/* Para que el padding no redimensione los div*/
+* { 
+    /*-moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;*/ 
+     box-sizing: border-box; 
+}
+
+:root {
+    /* Variables colores */
+    --azulceleste: #52b1dc;
+    --azulnoche: #040633;
+    --fondo: #FFFFFF;
+    --colortexto: #000000;
+    --amarilloverde: #ebfc51;
+    --claro1: #d9f5ff;
+    --claro2: #F5FFCC;
+    --color-borde-img: #ababab;
+    --fondo-submenu: #f9f9f9;
+
+    /* Variables dimensiones */
+    --ancho: 1280px;
+    --alto-footer: 150px;
+
+    /* Otras variables globales */
+    --radius: 5px 5px 5px 5px;
+}
+
+body {
+    font-family:'Anek Latin', sans-serif;
+    font-size: 16px;
+    padding: 0;
+    min-height: 100%;
+    background-color: var(--fondo);
+    min-width: 320px;
+}
+
+/*
+#########################################################
+Etiquetas semánticas
+#########################################################
+*/
+
+header {
+    color: var(--azulnoche);
+    background-color: var(--fondo);
+    /*padding: 5px 0px 5px 0px;*/
+    margin: auto;
+}
+
+nav {
+    background-color: var(--azulceleste);
+    height: 100px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    background: var(--azulceleste);
+    width: 100%;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    /*overflow: hidden;*/
+    overflow:visible;
+    z-index: 999;
+}
+
+body, main, header,footer {
+    margin: 0;
+}
+
+header,footer {
+    padding: 0px;
+    width: 100%;
+    background-color:inherit;
+}
+
+footer {
+    background-color: var(--azulnoche);
+    color: var(--fondo);
+    padding: 0.5em 0 0.5em 0;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    position:fixed;
+    bottom:0;
+    left:0;
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Kreon', serif;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--azulnoche);
+    text-underline-offset: 0.2em;
+    text-decoration: underline solid var(--amarilloverde);
+    text-decoration-thickness: 0.07em;
+    padding-bottom: 0.3em;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+/* Estilos por defecto de enlaces, aunque en muchos casos se modificarán 
+adaptándolos al contexto de cada situación */
+a {
+    color: var(--colortexto);
+    text-underline-offset: 0.25em;
+    text-decoration: underline solid var(--azulceleste);
+    text-decoration-thickness: 0.12em;  
+}
+
+a:hover {
+    text-decoration: underline solid var(--azulnoche);
+    text-decoration-thickness: 0.12em;  
+}
+
+ul{
+    list-style: none;
+}
+
+label {
+    display: block;
+}
+
+/*
+#########################################################
+CLASES: Contenedores
+#########################################################
+*/
+
+.container {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-gap: 0px 0px;
+    max-width: var(--ancho);
+    margin: auto;
+    min-height: 50px;
+    line-height: 2.0em;
+}
+
+.container_menu, ul {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    justify-content: center;
+    grid-template-rows: auto;
+    grid-auto-flow: column;
+    align-items: center;
+    margin: auto;
+    min-height: 90%;
+    background-color: var(--fondo);
+    max-width: var(--ancho);
+    padding-left: 0;
+}
+
+.container_hijo{
+    width: 100%;
+    max-width:fit-content;
+    max-height: 88px;
+    min-height: 32px;
+    background: inherit;
+}
+
+.navigation {
+    flex-wrap: wrap;
+}
+
+/*
+#########################################################
+CLASES: Contenedores tienda y clases de items
+#########################################################
+*/
+
+.flex-tienda{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    flex: 2 0 calc(25% - 10px);
+    align-items: center;
+    vertical-align: middle;
+    min-width: 249px;
+    width: 100%;
+    padding-bottom: 15px;
+    font-size: 0.95em;
+}
+
+.flex-tienda a {
+    text-decoration: none;;
+}
+
+.flex-desc-precio{
+    display: flex;
+    flex: auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-catalogo-carrito{
+    width: 60px;
+    height: 80px;
+    background-color: var(--azulceleste);
+    margin: 4px;
+    border-radius: var(--radius);
+    text-align: center;
+    background-image: url("../img/iconos/carrito.svg");
+    background-repeat: no-repeat;
+    background-position: 18px 20px;
+    padding-top: 2.8em;
+}
+.item-catalogo-carrito:hover {
+    background-color: var(--azulnoche);
+    color: var(--fondo);
+    background-image: url("../img/iconos/carrito_blanco.svg");
+}
+.item-catalogo-desc{
+    background-color: var(--fondo);
+    width: calc(100% - 10px);
+    text-align: center;
+    margin: 6px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.item-catalogo-carrito,.item-catalogo-desc{
+    font-weight: bold;
+}
+
+.item-catalogo-precio{
+    background-color: var(--claro2);
+    width: calc(100% - 10px);
+    text-align: center;
+    margin: 6px;
+}
+
+.menu-catalogo {
+    display: block;
+    float:inline-start;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 120px;
+    left: -300px;
+    height: fit-content;
+    min-width: 250px;
+    background-color: var(--claro2);
+    border: solid 1px var(--color-borde-img);
+    border-radius: var(--radius);
+    padding: 0px 0.9em 0px 0.9em;
+    z-index: 0;
+}
+
+.menu-catalogo-filtro {
+    height: 40px;
+    min-width: 100%;
+    border-radius: var(--radius);
+    background-color: var(--fondo);
+    border: solid 1px var(--colortexto);
+}
+
+.menu-catalogo-filtro-titulo{
+    font-size: 1.5em;
+    font-family: 'Kreon', serif;
+}
+
+.menu-catalogo-expandir{
+    visibility:collapse;
+    display: none;
+}
+
+.input-slider{
+    width: 100%;
+}
+
+#catalogo {
+    display: flex;
+    flex-direction: row;
+    column-gap: 24px;
+}
+
+/*
+#########################################################
+CLASES: Menús, navegación, grid y flex (img, txt y resto)
+#########################################################
+*/
+
+.cabecera_menu{
+    width: 100%;
+    background-color: var(--fondo);
+}
+
+.menu_hamburguesa,.separador,.espaciado,.login-button-movil{
+    visibility:collapse;
+    display: none;
+}
+
+.item-nav {
+    font-size: 14px;
+}
+
+.login {
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    align-items:flex-start;
+    gap: 6px;
+    padding: 0 0 10px 0;
+}
+
+.logo {
+    height: 84px;
+    width: 84px;
+    display: inline-block;
+}
+
+.botones-css{
+    max-height: 90px;
+    vertical-align:middle;
+    padding-left: 20px;
+}
+
+.botones-css,.login{
+    width: 125px;
+}
+
+.sect-buscar{
+    color:var(--fondo);
+    background-color: inherit;
+    align-items: center;
+        
+}
+
+.item-nav {
+    color: var(--azulnoche);
+}
+
+.nav-menu a:hover {
+    background-color: var(--azulceleste);
+}
+
+.nav-menu a:active {
+    background-color: var(--amarilloverde)
+}
+
+.boton-menu {
+    /*color: var(--azulnoche);*/
+    color: var(--colortexto);
+    display: block;
+    padding: 0.5em 2em 0.5em 2em;
+    background-color: var(--fondo);
+    border-color: var(--azulnoche);
+    border-radius: var(--radius);
+    border: solid 1px;
+    /*border-width: 1px;*/
+    min-width: 140px;
+    text-align: center;
+}
+
+.boton-menu, .boton-menu:hover{
+    text-decoration: none;
+}
+
+#buscar{
+    background-color: var(--fondo);
+    border-color: var(--azulnoche);
+    border-radius: var(--radius);
+    border: solid 1px;
+    /*border-width: 1px;*/
+    color: var(--azulnoche);
+    text-decoration: none;
+    /*display: block;*/
+    text-align: center;
+}
+
+#buscar img {
+    position:relative;
+    right: 10px;
+    top: 5px;
+}
+
+.imagen {
+    border-radius: 1%;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.login-button-movil img{
+    height: 32px;
+}
+
+.login-button-pc{
+    align-items: start;
+}
+
+.login-button-pc > img {
+    position:relative; left:-4px; top:6px;
+}
+
+.login-button-pc a {
+    text-decoration: none;
+}
+
+.login-button-pc a:hover {
+    text-decoration: underline solid var(--azulceleste);
+    text-decoration-thickness: 0.12em;  
+}
+
+.separador-pc{
+    background-color: var(--azulceleste);
+    width: 5px;
+    max-width: 5px;
+    min-width: 5px;
+    height: 100%;
+    min-height: 90px;
+}
+
+/* Dibujamos triángulo menú drop-down después de contenido */
+.boton-menu-flecha::after {
+    display: inline-block;
+    margin-left: 0.55em;
+    vertical-align:middle;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
+.contenido-submenu {
+    display: none;
+    visibility: collapse;
+    position: absolute;
+    background-color: var(--fondo-submenu);
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: solid 1px var(--colortexto);
+}
+
+.contenido-submenu a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/*.contenido-submenu a:hover {
+    background-color: #f34444;
+}*/
+
+.menu-con-drop:hover .contenido-submenu {
+    display: block;
+    visibility: visible;
+}
+
+#menu-ham-js{
+    visibility: visible;
+}
+
+/*
+#########################################################
+CLASES: Footer y contenido de este
+#########################################################
+*/
+
+.content-footer{
+    max-width: var(--ancho);
+    margin: auto;
+}
+
+.espacio-footer {
+    height: var(--alto-footer);
+    visibility:visible;
+    display:block;
+}
+
+.enlaces-iconos-social, .enlaces-iconos-social > img {
+    color: var(--fondo);
+    background-color: var(--azulnoche);
+    text-decoration: none;
+    padding: 0px 2px 0px 2px;
+}
+
+.enlaces-iconos-social:hover > img {
+    border-bottom: 3px solid var(--fondo);
+    color: var(--claro1);
+    margin-top: -3px; /* compensamos el border-bottom */
+}
+
+.footer-texto-inferior{
+    padding: 1em 0 1em 0;
+}
+
+/*
+#########################################################
+CLASES: Formularios y botones
+#########################################################
+*/
+
+.form-alta {
+    border: solid 1px var(--azulceleste);
+    padding: 12px 12px 24px 12px;
+    border-radius: var(--radius);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin: 2.0em auto; 
+}
+
+.form-alta input {
+    border: solid 1px var(--color-borde-img);
+    min-width: 125px;
+    width: 100%;
+}
+
+/* Etiquetas de formulario en cabeceras de div */
+form label {
+    margin-right: 0em;
+    margin-top: -2em;   
+    position: absolute;
+    background-color: var(--fondo);
+    width: 15em;
+    text-align: center;
+}
+
+.form-total {
+    width:99%;
+}
+
+.form-mitad {
+    max-width: 50%;
+    width: 49%;
+}
+
+.form-tercio {
+    max-width: 33%;
+    width: 32%;
+}
+
+.form-botones{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding-bottom: 2em;
+}
+
+input {
+    padding: 0.5em 2em 0.5em 2em;
+    width: 550px;
+    border: none;
+    border-radius: var(--radius);
+}
+
+button {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--colortexto);
+    border-radius: 10px;
+    background-color: rgba(82, 177, 220, 0.9);
+}
+
+button:hover{
+    background-color: rgb(4, 6, 51, 0.9);
+    color: var(--fondo);
+    box-shadow: 3px 3px 15px 1px rgba(0, 0, 0, 0.2);
+}
+
+button:active{
+    background-color: rgba(217, 245, 255, 0.9);
+    color: var(--colortexto);
+}
+
+/*
+#########################################################
+CLASES: Contenedores de columnas (2, 4, etc), artículos y noticias
+#########################################################
+*/
+
+.doscolumnas-flex{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    padding-right: 4px;
+    gap: 24px;
+}
+
+.cuatrocolumnas, .doscolumnas{
+    display: grid;
+    gap: 24px;
+    justify-content: center;
+    margin: auto;
+}
+
+.cuatrocolumnas{
+    grid-template-columns: repeat(auto-fill,minmax(249px, 1fr));
+}
+
+.articulo{
+    text-align: left;
+    /*vertical-align: auto;*/
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.articulo > p {
+    line-height: 1.5em;
+}
+
+.articulo > h2 {
+    margin: 0;
+}
+
+.cuatrocolumnas p{
+    line-height: 1.2em;
+    font-size: 0.85em;
+}
+
+.item-noticia{
+    width: 100%;
+}
+
+.item-noticia a {
+    text-decoration: none;
+}
+
+.item-noticia h2 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.imagen-tienda-art,.imagen-noticia{
+    border: solid 2px var(--color-borde-img);
+    object-fit: cover ; 
+    object-position: center;
+    border-radius: 3%;   
+}
+
+.imagen-noticia{
+    /*max-height: 48%;*/
+    height: 65%;
+    max-height: calc(180px + 30%);
+}
+
+.doscolumnas{
+    grid-template-columns: repeat(auto-fill,minmax(550px, 1fr));
+}
+
+.doscolumnas :nth-child(3) { 
+    order: 3; 
+}
+
+.doscolumnas :nth-child(5) { 
+    order: 5; 
+}
+
+/*
+#########################################################
+CLASES: Pasapáginas
+#########################################################
+*/
+
+.contenedor-pasapagina{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /*margin: auto;*/
+    padding: 3em 0 3em 0;
+}
+
+.contenedor-pasapagina a {
+    text-decoration: none;
+}
+
+.contenedor-pasapagina p {
+    margin: auto auto 0.5em auto;
+}
+
+.contenedor-pasapagina a:hover{
+    color: var(--azulceleste);
+}
+
+.pasapagina-simbolo {
+    font-size: 4em;
+    color: var(--colortexto);
+    padding: 0px 24px 0px 24px;
+    /*vertical-align: auto;*/
+    position:relative;
+    top: 10px;
+}
+
+.pasapagina-numero {
+    font-size: 2.5em;
+    position: relative;
+}
+
+/*
+#########################################################
+CLASES: Otros
+#########################################################
+*/
+
+/*
+Mejoramos el skip-to-content para que esté oculto y no 
+interfiera con el resto de elementos inline y block.
+*/
+.skip {
+    width: 0px;
+    height: 0px;
+    border-image-source: none;
+    border-style: none;
+    position:absolute;
+    top: 0;
+    overflow:hidden;
+    z-index:-999;
+}
+
+.negrita{
+    font-weight: bold;
+}
+
+.alin-derecha{
+    text-align: right;
+    justify-content: flex-end;
+}
+
+.alin-centro{
+    text-align: center;
+}
+
+.alin-izquierda{
+    text-align: left;
+}
+
+.margen{
+    padding: 0 40px 0 40px;
+}
+
+.seleccion-orden{
+    height: 40px;
+    min-width: 235px;
+    border-radius: var(--radius);
+    margin-bottom: 24px;
+    background-color: var(--fondo);
+    border: solid 1px var(--colortexto);
+}
+
+.desactivado {
+    color: var(--color-borde-img);
+}
+
+/* 
+#########################################################
+Media querys
+#########################################################
+
+Ejemplo: 
+@media screen and (max-width: 640px) and (orientation: portrait){ ... }
+*/
+
+@media screen and (max-width: 1920px) and (max-height: 1080px){
+
+    /* Con resoluciones más bajas que 1080p anclamos estáticamente el footer al fondo, 
+    con más grandes lo mejor es que se quede en sticky, sobre todo cuando no hay contenido 
+    para llenar toda la pantalla */
+
+    footer{
+        position:static;
+    }
+
+    .espacio-footer {
+        visibility: collapse;
+        display:none;
+    }
+}
+
+/*
+Las columnas, imágenes, cabeceras y logos se adaptan a un ancho inferior a 1215px 
+*/
+@media screen and (max-width: 1215px){
+    .doscolumnas{
+        max-width: 450px;
+        grid-template-columns: repeat(auto-fill,minmax(370px, 1fr));
+        gap: 12px;
+    }
+
+    .imagen{
+        max-width: 100%;
+    }
+
+    .container{
+        max-width: calc(100vw);
+    }
+
+    .logo{
+        height: calc(6.9vw);
+        width: calc(6.9vw);
+    }
+ 
+    .cabecera_menu{
+        height: 100%;
+        background-color: var(--azulceleste);        
+    }
+
+    .boton-menu {
+        padding: 0.5em 0em 0.5em 0em;  
+        min-width: 110px;
+        max-width: 120px;
+    }
+
+}
+
+/* 
+Los menús se adaptan a un ancho más pequeño a 1024px
+*/
+@media screen and (max-width: 1024px){
+
+    .boton-menu {
+        padding: 0.5em 0em 0.5em 0em;  
+        min-width: 94px;
+        max-width: 94px;
+    }
+
+    .container_menu>*{
+        flex:content;
+    }
+
+    .articulo > p {
+        line-height: 1.5em;
+    }
+
+    input {
+        width: 470px;
+    }
+
+    #buscar{
+        width: 100%;
+    }
+}
+
+/*
+Empezamos a ajustar el padding a pantallas móviles y el ancho de los sistemas de columnas para que sigan siendo 2
+*/
+@media screen and (max-width: 855px){
+
+    .margen{
+        padding: 0 15px 0 15px;
+    }
+
+    .doscolumnas{
+        grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+    }
+
+    .cuatrocolumnas{
+        grid-template-columns: repeat(auto-fill,minmax(260px, 1fr));
+    }   
+
+    .login-button-pc > span {
+        visibility:collapse;
+        display: none;
+    }
+
+    .botones-css,.login{
+        width: 40px;
+    }
+
+    .enlaces-iconos{
+        text-decoration: none;
+    }
+    
+    .enlaces-iconos:hover > img {
+        border-bottom: 2px solid var(--azulceleste);
+        color: var(--azulceleste);
+        margin-top: -3px; /* compensamos el border-bottom */
+    }
+}
+
+/*
+Más ajustes, logo y anchos de columnas.
+Están pensados para tamaños intermedios (Tablet) como 800px y cambiando el menú móvil a partir de 768px
+*/
+@media screen and (max-width: 801px){
+
+    .doscolumnas{
+        grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
+    }
+
+    .cuatrocolumnas{
+        grid-template-columns: repeat(auto-fill,minmax(249px, 1fr));
+    }   
+    
+    .logo{
+        margin-top: 3px;
+        height: 55px;
+        width: 55px;
+    }
+
+    .container_menu>*{
+        height:fit-content;
+    }
+
+    .articulo > p {
+        line-height: 1.25em;
+    }
+
+    #catalogo{
+        flex-direction: column;
+        column-gap: unset;
+        row-gap: 24px;
+    }
+
+    .menu-catalogo {
+        display: block;
+        float:inline-start;
+        position: unset;
+        top: 120px;
+        left: -300px;
+        height: 60px;
+        min-width: 250px;
+        background-color: var(--claro2);
+        border: solid 1px var(--color-borde-img);
+        border-radius: var(--radius);
+        padding: 0px 0.9em 0px 0.9em;
+        overflow: hidden;
+    }
+    
+    .menu-catalogo-expandir{
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+        height: 30px;
+        margin-top: 5px;
+        visibility: visible;
+        width: 100%;
+        text-overflow: ellipsis;
+    }
+}
+
+
+/* Inicio menú móvil con anchos de 800px (originalmente 768px) y otros elementos para pantalla móvil */
+@media screen and (max-width: 800px){
+    
+    #buscar,.login-button-pc,.separador-pc{
+        visibility:collapse;
+        display: none;
+    }
+
+    .item-nav{
+        flex-direction: column;
+        display:flex;
+        visibility:hidden;
+        position: absolute;
+        z-index: 1;
+        top: 67px;
+        right: 0px;
+        width: 100%;
+        min-height: calc(100vh - var(--alto-footer));
+        font-size: 1.2em;
+        overflow: hidden;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(236,250,255,1) 84%, rgba(217,245,255,1) 100%); 
+        justify-content: unset; 
+    }
+
+    .menu_hamburguesa,.separador,.espaciado,.botones-css>.container_hijo,.login-button-movil{
+        visibility:visible;
+        display: block;
+    }
+
+    #menu-ham-js{
+        visibility: hidden;
+    }
+
+    .boton-menu {
+        padding: 0.5em 0em 0.5em 0em;  
+        min-width: 100vw;
+        max-width: unset;
+        border: none;
+        border-bottom: solid 1px var(--color-borde-img);
+        border-radius: unset;
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .contenido-submenu {
+        margin-left: 160px;
+        margin-top: -40px;
+        width: 100%;
+    }
+
+    /* Giramos triángulo 90 grados */
+    .boton-menu-flecha::after {
+        border-top: 0.4em solid transparent;
+        border-right: 0;
+        border-bottom: 0.4em solid transparent; 
+        border-left: 0.4em solid;
+    }
+
+
+    .container_menu{
+        background-color: var(--azulceleste);
+        min-height: 64px;
+    }
+
+    .cabecera_menu,.container_menu,nav{
+        height:64px;
+        max-height: 64px;
+    }
+
+    .menu_hamburguesa img {
+        height: 48px;
+        width: 48px;
+    }
+
+    .separador{
+        background-color: var(--fondo);
+        width: 5px;
+        max-width: 5px;
+        height: 100%;
+    }
+
+    .login,.botones-css{
+        align-items: flex-end;
+        flex-direction: row;
+        padding: 0;
+        margin: 0 0 0 auto;
+        width: 125px;
+    }
+
+    .login-button-movil{
+        /* Color blanco de dibujado en SVG*/
+        filter: invert(99%) sepia(4%) saturate(533%) hue-rotate(204deg) brightness(114%) contrast(100%);
+    }
+
+    .form-alta {
+        flex-direction: column;
+    }
+    .form-alta div {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .form-alta label {
+        width: 10em;
+    }
+
+/*    #menu {
+        transform: none;
+        opacity: 0;
+    
+        transition: opacity 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+      }
+*/
+}
+
+/* 
+En algunos navegadores el ajuste de la rejilla muestra antes de tiempo una sola columna. 
+
+Añadimos ese caso particular aquí
+*/
+@media screen and (max-width: 550px){
+    .doscolumnas :nth-child(3) { 
+        order: unset; 
+    }
+    .doscolumnas :nth-child(5) { 
+        order: unset; 
+    }
+    .item-noticia{
+        max-width: 100%;
+        width: 100%;
+    }
+    .imagen-noticia{
+        height: 65vw;
+        max-height: 65vw;
+    }
+}
+
+/*
+Tamaños inferiores a 480px de ancho muestran una sola columna siempre, 
+ajustada al ancho de pantalla
+*/
+@media screen and (max-width: 480px){
+
+    .espaciado{
+        visibility:collapse;
+        display: none;
+    }
+    
+    .separador {
+        margin: 0 12px 0 12px;
+    }    
+
+    .doscolumnas{
+        max-width: 100%;
+        grid-template-columns: repeat(auto-fill,minmax(100%, 1fr));
+    }
+
+    .doscolumnas,.cuatrocolumnas{
+        gap: 0px;
+    }
+
+    .margen{
+        padding: 0 15px 0 15px;
+    }
+
+    .imagen{
+        max-width: 100%;
+    }
+
+    .container_menu,ul{
+        gap: 4px;
+    }
+
+    .articulo > p {
+        line-height: 1.1em;
+    }
+
+    .contenido-submenu {
+        margin-left: 100px;
+        margin-top: -40px;
+        width: 100%;
+    }
+
+    .menu-catalogo-expandir-texto{
+        display: none;
+        visibility: collapse;
+    }
+
+}
