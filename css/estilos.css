@@ -597,8 +597,12 @@ input {
 }
 
 .input-buscar-submit{
-    visibility: hidden;
+    visibility: visible;
     position: absolute;
+    width: 30px;
+    margin-left: -60px;
+    margin-top: 3px;
+    z-index: -1;
 }
 
 button {
