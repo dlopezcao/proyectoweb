@@ -578,7 +578,7 @@ CLASES: Formularios y botones
 
 .form-tercio {
     max-width: 33%;
-    width: 32%;
+    width: 32.5%;
 }
 
 .form-botones{
@@ -1102,7 +1102,8 @@ Están pensados para tamaños intermedios (Tablet) como 800px y cambiando el men
         width: 100%;
     }
 
-    .form-alta label {
+    /*.form-alta label {*/
+    .form-total-label {
         width: 10em;
     }
 
