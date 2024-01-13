@@ -557,7 +557,8 @@ CLASES: Formularios y botones
 }
 
 /* Etiquetas de formulario en cabeceras de div */
-form label {
+/*form label {*/
+.form-total-label{
     margin-right: 0em;
     margin-top: -2em;   
     position: absolute;
@@ -588,6 +589,8 @@ form label {
     gap: 24px;
     padding-bottom: 2em;
 }
+
+
 
 input {
     padding: 0.5em 2em 0.5em 2em;
