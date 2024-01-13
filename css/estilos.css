@@ -50,6 +50,7 @@ Definiciones base de HTML
     --claro1: #d9f5ff;
     --claro2: #F5FFCC;
     --color-borde-img: #ababab;
+    --color-desactivado: #737373; /* Subido de #ababab por accesibilidad */
     --fondo-submenu: #f9f9f9;
 
     /* Variables dimensiones */
@@ -808,7 +809,7 @@ interfiera con el resto de elementos inline y block.
 }
 
 .desactivado {
-    color: var(--color-borde-img);
+    color: var(--color-desactivado);
 }
 
 /* 
