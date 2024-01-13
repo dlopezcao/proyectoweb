@@ -596,6 +596,11 @@ input {
     border-radius: var(--radius);
 }
 
+.input-buscar-submit{
+    visibility: hidden;
+    position: absolute;
+}
+
 button {
     border: 0;
     line-height: 2.5;
