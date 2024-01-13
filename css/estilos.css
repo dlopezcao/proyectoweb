@@ -1137,6 +1137,11 @@ Añadimos ese caso particular aquí
         height: 65vw;
         max-height: 65vw;
     }
+    
+    #seleccion-orden-label{
+        visibility: collapse;
+        display: none;
+    }
 }
 
 /*

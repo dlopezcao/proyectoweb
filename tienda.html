@@ -103,11 +103,12 @@
             <!-- Inicio DIV envolviendo contenido --> 
             <div class="container margen">
                 <div class="doscolumnas-flex">
-                    <select class="seleccion-orden">
+                    <select title="Selector de orden" class="seleccion-orden">
                         <option value="" selected disabled hidden>Ordenar por ...</option>
                         <option value="nombre">Nombre</option>
                         <option value="precio">Precio</option>
-                    </select>
+                    </select>                    
+                    <label id="seleccion-orden-label" for="seleccion-orden">Orden</label>
                     <div class="menu-catalogo-expandir">
                         <a href="javascript:expande()"><img src="img/iconos/expandir.svg" alt="Mostrar u ocultar filtros"></a>
                         <a class="menu-catalogo-expandir-texto" href="javascript:expande()"> Expandir / Contraer filtros</a>
