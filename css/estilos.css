@@ -223,7 +223,7 @@ CLASES: Contenedores tienda y clases de items
 }
 
 .flex-tienda a {
-    text-decoration: none;;
+    text-decoration: none;
 }
 
 .flex-desc-precio{
@@ -1156,7 +1156,7 @@ ajustada al ancho de pantalla
 */
 @media screen and (max-width: 480px){
 
-    .espaciado{
+    .menu-catalogo-expandir-texto,.espaciado{
         visibility:collapse;
         display: none;
     }
@@ -1194,11 +1194,6 @@ ajustada al ancho de pantalla
         margin-left: 100px;
         margin-top: -40px;
         width: 100%;
-    }
-
-    .menu-catalogo-expandir-texto{
-        display: none;
-        visibility: collapse;
     }
 
 }

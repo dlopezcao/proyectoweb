@@ -55,25 +55,3 @@ function expande(){
 window.onresize = detectaResize;
 var x = document.getElementById("main-content");
 x.onresize = detectaResize;
-
-////////////////////////////////////////////////////////////
-// No usadas (Pendiente)
-////////////////////////////////////////////////////////////
-//Evaluamos el tipo de evento:
-//touchstart para dispositivos táctiles
-//mouseup para el resto
-/*var tipoEvento = ((document.ontouchstart !== null) ? 'mouseup' : 'touchstart');
-
-$j(document).on(tipoEvento, function(e) {
- if (is_open === 1) { // si está abierto
-   if (!$j(e.target).closest("#main-navigation").length > 0) {
-        //y no pincho en navegación
-        close_nav(); //ciérrate
-   }
-  } else { // si está cerrado
-     if ($j(e.target).closest("#nav-open").length > 0) {
-        //y pincho en nav open
-        open_nav(); //abro
-     }
-  }
-});*/
