@@ -495,7 +495,8 @@ CLASES: Menús, navegación, grid y flex (img, txt y resto)
     background-color: #f34444;
 }*/
 
-.menu-con-drop:hover .contenido-submenu {
+/* Focus y focus within, para poder usar la web con teclado (Accesibilidad) */
+.menu-con-drop:hover .contenido-submenu, .menu-con-drop:focus .contenido-submenu, .menu-con-drop:focus-within .contenido-submenu {
     display: block;
     visibility: visible;
 }
